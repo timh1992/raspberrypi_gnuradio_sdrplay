@@ -52,9 +52,9 @@ rm -R ~/Develop
 
 # now we change permissions on these root-owned folders so the user can 
 # delete them at their leisure.
+
 chmod -R 0777 ./*
 
-echo "."
-echo "Second part of installation done.   Now run the third part of the isntallation"
-echo "Be sure to use sudo to run it!"
+# And we're done.   Cubic should work with the SDRPlay.  The user can
+# run it from the terminal with CubicSDR or add this command to a menu.
 

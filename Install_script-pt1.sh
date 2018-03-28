@@ -10,14 +10,6 @@ apt-get install libgtk2.0-dev libpulse-dev libpython-dev python-numpy
 apt-get install mesa-utils libeglw1-mesa libglw1-mesa-dev
 apt-get install freeglut3-dev freeglut3
 
-apt-get install libusb-1.0-0-dev
-apt-get install python-cheetah libboost-all-dev swig2.0 python-pkgconfig liborc-0.4-dev libfftw3-dev libasound2-dev libzmq-dev libgsl0-dev python-sphinx libcppunit-dev libgsm1-dev python-numpy libgsl0-dev python-mako
-apt-get install doxygen
-apt-get install python-qt4 libqt4-dev python-qwt5-qt4
-apt-get install python-wxgtk3.0
-apt-get install libboost-dev
-apt-get install libxml2-dev libzmq3-dev python-gtk2-dev libxml++2.6-dev python-lxml libwxgtk3.0-dev pyqt4-dev-tools python3-pyqt4 python-gtk2
-
 # Now we'll git the projects we need
 
 git clone https://github.com/jgaeddert/liquid-dsp
@@ -49,7 +41,8 @@ make install
 cd ..
 
 echo "."
-echo "First part of installation done.   Now run the SDRPlay driver file you"
+echo "First part of installation done.   Now run the SDRPlay file you"
 echo "downloaded from their site.  Be sure to use sudo to run it!"
+
 
 
