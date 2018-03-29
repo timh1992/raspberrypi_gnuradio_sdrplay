@@ -19,10 +19,9 @@ sudo apt-get install python-qt4 libqt4-dev python-qwt5-qt4
 sudo apt-get install python-wxgtk3.0
 
 sudo apt-get install python-cheetah libboost-dev libboost-all-dev libfftw3-dev swig
-sudo apt-get install libxml2-dev libzmq3-dev python-gtk2-dev python-numpy libxml++2.6-dev python-lxml\
- libwxgtk3.0-dev python-qwt5-qt4 pyqt4-dev-tools python3-pyqt4 python-gtk2
+sudo apt-get install libxml2-dev libzmq3-dev python-gtk2-dev python-numpy libxml++2.6-dev python-lxml libwxgtk3.0-dev python-qwt5-qt4 pyqt4-dev-tools python3-pyqt4 python-gtk2
 
-git clone http://git.gnuradio.org/git/gnuradio.git
+git clone http://git.gnuradio.org/git/gnuradio.git #www.github.com/gnuradio/gnuradio
 cd gnuradio/
 
 git submodule init
