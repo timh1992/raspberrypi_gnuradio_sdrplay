@@ -1,12 +1,14 @@
 #! /bin/bash
+# overclock to make system faster, cooling necessary!!
+sudo wget -O /usr/bin/zram.sh https://raw.githubusercontent.com/novaspirit/rpi_zram/master/\zram.sh
 # First we install needed dependancies.
 #######
 apt install -y build-essential automake cmake g++ swig libgtk2.0-dev libpulse-dev libpython-dev python-numpy mesa-utils libegl1-mesa libglw1-mesa-dev freeglut3-dev freeglut3
 
-apt install libusb-1.0-0-dev libasound2-dev python-cheetah swig2.0 python-pkgconfig liborc-0.4-dev libfftw3-dev libzmq-dev libgsl0-dev 
-apt install python-sphinx libcppunit-dev libgsm1-dev python-mako
-apt install doxygen python-qt4 libqt4-dev python-qwt5-qt4 python-wxgtk3.0 libboost-dev libboost-all-dev
-apt install libxml2-dev libzmq3-dev python-gtk2-dev libxml++2.6-dev python-lxml libwxgtk3.0-dev pyqt4-dev-tools python3-pyqt4 python2-pyqt4 python-gtk2
+apt install -y libusb-1.0-0-dev libasound2-dev python-cheetah swig2.0 python-pkgconfig liborc-0.4-dev libfftw3-dev libzmq-dev libgsl0-dev 
+apt install -y python-sphinx libcppunit-dev libgsm1-dev python-mako
+apt install -y doxygen python-qt4 libqt4-dev python-qwt5-qt4 python-wxgtk3.0 libboost-dev libboost-all-dev
+apt install -y libxml2-dev libzmq3-dev python-gtk2-dev libxml++2.6-dev python-lxml libwxgtk3.0-dev pyqt4-dev-tools python3-pyqt4 python-qt4 python-gtk2
 # download all files from git
 git clone https://github.com/jgaeddert/liquid-dsp
 wget https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.0/wxWidgets-3.1.0.tar.bz2
@@ -22,8 +24,6 @@ mkdir sdrplay
 cd sdrplay
 git clone https://github.com/willcode/gr-osmosdr
 cd ../..
-
-#
 
 # Build liquid-dsp
 cd liquid-dsp
