@@ -1,10 +1,7 @@
 #! /bin/bash
 # First we install needed dependancies.
-
-apt-get install git build-essential automake cmake g++ swig
-apt-get install libgtk2.0-dev libpulse-dev libpython-dev python-numpy
-apt-get install mesa-utils libeglw1-mesa libglw1-mesa-dev
-apt-get install freeglut3-dev freeglut3
+#######
+sudo apt install -y build-essential automake cmake g++ swig libgtk2.0-dev libpulse-dev libpython-dev python-numpy mesa-utils libeglw1-mesa libglw1-mesa-dev freeglut3-dev freeglut3
 
 # download all files from git
 git clone https://github.com/jgaeddert/liquid-dsp
