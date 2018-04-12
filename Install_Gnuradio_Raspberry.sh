@@ -1,20 +1,10 @@
 #! /bin/bash
 # First we install needed dependancies.
+# sudo wget -O /usr/bin/zram.sh https://raw.githubusercontent.com/novaspirit/rpi_zram/master/\zram.sh 
 #######
 apt update
 apt upgrade
-apt install -y libusb-1.0-0-dev libasound2-dev python-cheetah swig2.0 python-pkgconfig liborc-0.4-dev libfftw3-dev libzmq-dev libgsl0-dev 
-apt install -y python-sphinx libcppunit-dev libgsm1-dev python-mako
-apt install -y doxygen python-qt4 libqt4-dev python-qwt5-qt4 python-wxgtk3.0 libboost-dev libboost-all-dev
-apt install -y libxml2-dev libzmq3-dev python-gtk2-dev libxml++2.6-dev python-lxml libwxgtk3.0-dev pyqt4-dev-tools python3-pyqt4 python-qt4 python-gtk2
 # download all files from git
-git clone https://github.com/jgaeddert/liquid-dsp
-wget https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.0/wxWidgets-3.1.0.tar.bz2
-tar -xvjf wxWidgets-3.1.0.tar.bz2  
-git clone https://github.com/pothosware/SoapySDR.git
-git clone https://github.com/pothosware/SoapySDRPlay.git
-git clone https://github.com/pothosware/SoapyRemote.git
-git clone https://github.com/cjcliffe/CubicSDR.git
 git clone https://github.com/gnuradio/gnuradio.git
 
 cd Desktop
@@ -23,61 +13,6 @@ cd sdrplay
 git clone https://github.com/willcode/gr-osmosdr
 cd ../..
 
-# Build liquid-dsp
-cd liquid-dsp
-./bootstrap.sh
-./configure --enable-fftoverride 
-make 
-make install
-ldconfig
-cd ..
-
-# Build wxwidgets
-cd wxWidgets-3.1.0/
-mkdir -p ~/Develop/wxWidgets-staticlib
-./autogen.sh 
-./configure --with-opengl --disable-shared --enable-monolithic --with-libjpeg --with-libtiff --with-libpng --with-zlib --disable-sdltest --enable-unicode --enable-display --enable-propgrid --disable-webkit --disable-webview --disable-webviewwebkit --prefix=`echo ~/Develop/wxWidgets-staticlib` CXXFLAGS="-std=c++0x" --with-libiconv=/usr
-make
-make install
-cd ..
-
-# Build SoapySDR
-cd SoapySDR
-mkdir build
-cd build
-cmake ..
-make -j4
-make install
-ldconfig
-cd ../..
-
-# Build Soapy SDRPlay module
-cd SoapySDRPlay
-mkdir build
-cd build
-cmake ..
-make
-make install
-cd ../..
-
-# Build SoapyRemote
-cd SoapyRemote
-mkdir build
-cd build
-cmake ..
-make
-make install
-cd ../..
-
-# Build Cubic
-cd CubicSDR
-mkdir build
-cd build
-cmake ../ -DCMAKE_BUILD_TYPE=Release -DwxWidgets_CONFIG_EXECUTABLE=~/Develop/wxWidgets-staticlib/bin/wx-config
-make
-make install
-cd ../..
-rm -R ~/Develop
 ##########################
 # change architecture of the gcc compiler
 cp /etc/apt/sources.list /etc/apt/sources.bak.list
